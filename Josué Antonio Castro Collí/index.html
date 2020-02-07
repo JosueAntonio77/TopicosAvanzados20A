@@ -10,39 +10,21 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <script>
-        	function mensaje (){
-        		alert ("Hola mundo");
-        	} 
-        	
-        </script>
+        <script src ="Programa 1.js"> </script>
 
     </head>
-    <body onload= "mensaje();" >
-    	<!--  -->
     	<div>
-    		<form>
     			<!--Al escribir sale "Hola Mundo" -->
     			<input type="text" onkeyup="mensaje();">
     			<!-- Sale mensaje de "Precionaste.. " al escribir -->
     			<input type="text" onkeydown="alert('Precionaste...');" onkeyup="mensaje();">
-    			<input type="button">
-    			<input type="checkbox">
-    			<input type="color">
-    			<input type="date">
-    			<input type="datatime-local">
-    			<input type="email">
-    			<input type="file">
-    			<input type="hidden">
-    			<input type="image">
-
     			<!-- Hacer click para salir "Hola Mundo" -->
-    			<button ondblclick ="mensaje();"> Este es un botón </button>
-    			<!-- Soloal pasar el mause se abre la ventana "Hola Mundo" -->
-    			<button onmouseover ="mensaje();"> Este es un botón </button>
-    		</form>
+    			<button ondblclick ="Encender();"> Enciende el motor </button>
+    			<button ondblclick ="Apagar();"> Apaga el motor </button>
+    			
     	</div>
 
-        <div>Josue Antonio Castro Colli</div>
+        <div id="motor"> </div>
+
     </body>
 </html>
