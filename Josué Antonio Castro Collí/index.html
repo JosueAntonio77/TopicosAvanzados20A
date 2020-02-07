@@ -19,10 +19,13 @@ and open the template in the editor.
 
     </head>
     <body onload= "mensaje();" >
-    	<-- Que onda carnal -->
+    	<!--  -->
     	<div>
     		<form>
-    			<input type="text">
+    			<!--Al escribir sale "Hola Mundo" -->
+    			<input type="text" onkeyup="mensaje();">
+    			<!-- Sale mensaje de "Precionaste.. " al escribir -->
+    			<input type="text" onkeydown="alert('Precionaste...');" onkeyup="mensaje();">
     			<input type="button">
     			<input type="checkbox">
     			<input type="color">
@@ -33,6 +36,10 @@ and open the template in the editor.
     			<input type="hidden">
     			<input type="image">
 
+    			<!-- Hacer click para salir "Hola Mundo" -->
+    			<button ondblclick ="mensaje();"> Este es un botón </button>
+    			<!-- Soloal pasar el mause se abre la ventana "Hola Mundo" -->
+    			<button onmouseover ="mensaje();"> Este es un botón </button>
     		</form>
     	</div>
 
