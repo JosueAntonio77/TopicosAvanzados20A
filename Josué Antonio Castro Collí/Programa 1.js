@@ -13,7 +13,7 @@
     	motor.innerHTML = " <img src ='https://i1.wp.com/i3.8000vueltas.com/2007/07/4cyl-animation.gif'>";
     } 
 
-    function Apagar (){
+    function Apagar () {
     	var motor = document.getElementById("motor");
     	motor.innerHTML = " <img src ='MotorApagado.jpeg'>";
     }
