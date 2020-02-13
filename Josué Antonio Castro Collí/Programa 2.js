@@ -14,8 +14,7 @@ var calificacion2 = prompt("Escribe una calificación númerica");
 if (isNaN (calificacion1) || isNaN(calificacion2) ){
 	alert ("No es númerico ");
 } else {
-	var suma = parseInt(calificacion1) + parseInt(calificaion2);
+	var suma = parseInt(calificacion1) + parseInt(calificacion2);
 	alert(suma);
-	alert ("Es númerico");
 	
 }
