@@ -3,7 +3,7 @@
 * Source: Programa1.js 
 * Description: Funciones iniciales en js
 * Encender un motor / Apagar un motor 
-* Date: 7/Fec/2020
+* Date: 7/Febrero/2020
 * Author: Josue Antonio Castro Colli
 ****************************************
 */

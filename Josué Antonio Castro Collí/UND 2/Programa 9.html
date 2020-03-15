@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!--
 Source:         Program 9.html
-Description:    
-Date:           21/Feb/20
+Description:    Hacer tablas.
+Date:           21/Febrero/2020
 Author: 		Josue Antonio Castro Colli.
 
 -->
@@ -11,68 +11,71 @@ Author: 		Josue Antonio Castro Colli.
  <!--******************************************************************************************-->
     	<script src ="https://code.jquery.com/jquery-3.3.1.js"> </script>
     	<script src ="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    	<link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" >
+        <link href="Disenio.css" rel="stylesheet" type="text/css">
+
+
     	<script>
-    		
-    		function format ( d )  {
-    return 'Full name: '+d.first_name+' '+d.last_name+'<br>'+
-        'Salary: '+d.salary+'<br>'+
-        'The child row can contain any data you wish, including links, images, inner tables etc.';
-}
- 
-$(document).ready(function() {
-    var dt = $('#example').DataTable( {
-        "processing": true,
-        "serverSide": true,
-        "ajax": "scripts/ids-objects.php",
-        "columns": [
-            {
-                "class":          "details-control",
-                "orderable":      false,
-                "data":           null,
-                "defaultContent": ""
-            },
-            { "data": "first_name" },
-            { "data": "last_name" },
-            { "data": "position" },
-            { "data": "office" }
-        ],
-        "order": [[1, 'asc']]
-    } );
- 
-    // Array to track the ids of the details displayed rows
-    var detailRows = [];
- 
-    $('#example tbody').on( 'click', 'tr td.details-control', function () {
-        var tr = $(this).closest('tr');
-        var row = dt.row( tr );
-        var idx = $.inArray( tr.attr('id'), detailRows );
- 
-        if ( row.child.isShown() ) {
-            tr.removeClass( 'details' );
-            row.child.hide();
- 
-            // Remove from the 'open' array
-            detailRows.splice( idx, 1 );
-        }
-        else {
-            tr.addClass( 'details' );
-            row.child( format( row.data() ) ).show();
- 
-            // Add to the 'open' array
-            if ( idx === -1 ) {
-                detailRows.push( tr.attr('id') );
-            }
-        }
-    } );
- 
-    // On each draw, loop over the `detailRows` array and show any child rows
-    dt.on( 'draw', function () {
-        $.each( detailRows, function ( i, id ) {
-            $('#'+id+' td.details-control').trigger( 'click' );
-        } );
-    } );
-} );
+    		function format ( d ) {
+    			return 'Full name: '+d.first_name+' '+d.last_name+'<br>'+
+      			  'Salary: '+d.salary+'<br>'+
+       			 'La fila secundaria puede contener cualquier información que desee, incluidos enlaces, imágenes, tablas internas, etc.';
+			}
+			 
+				$(document).ready(function() {
+				    var dt = $('#example').DataTable( {
+				        "processing": true,
+				        "serverSide": true,
+				        "ajax": "scripts/ids-objects.php",
+				        "columns": [
+				            {
+				                "class":          "details-control",
+				                "orderable":      false,
+				                "data":           null,
+				                "defaultContent": ""
+				            },
+				            { "data": "first_name" },
+				            { "data": "last_name" },
+				            { "data": "position" },
+				            { "data": "office" }
+				        ],
+				        "order": [[1, 'asc']]
+				    } );
+				 
+				    // Matriz para rastrear los identificadores de las filas de detalles mostrados
+				    var detailRows = [];
+				 
+				    $('#example tbody').on( 'click', 'tr td.details-control', function () {
+				        var tr = $(this).closest('tr');
+				        var row = dt.row( tr );
+				        var idx = $.inArray( tr.attr('id'), detailRows );
+				 
+				        if ( row.child.isShown() ) {
+				            tr.removeClass( 'details' );
+				            row.child.hide();
+				 
+				            // Remove from the 'open' array
+				            detailRows.splice( idx, 1 );
+				        }
+				        else {
+				            tr.addClass( 'details' );
+				            row.child( format( row.data() ) ).show();
+				 
+				            // Add to the 'open' array
+				            if ( idx === -1 ) {
+				                detailRows.push( tr.attr('id') );
+				            }
+				        }
+				    } );
+				 
+				    // On each draw, loop over the `detailRows` array and show any child rows
+				    dt.on( 'draw', function () {
+				        $.each( detailRows, function ( i, id ) {
+				            $('#'+id+' td.details-control').trigger( 'click' );
+				        } );
+				    } );
+				} );
+
     	</script>
  <!--******************************************************************************************-->
         <title>Programa 9</title>
@@ -81,17 +84,16 @@ $(document).ready(function() {
     </head>
     <body>
  <!--******************************************************************************************-->   	
-        <div>TODO write content</div>
+        <div>TODO write content</div> 
 
         <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
-                <th>Name</th>
+                <th></th>
+                <th>First name</th>
+                <th>Last name</th>
                 <th>Position</th>
                 <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
             </tr>
         </thead>
         <tbody>
@@ -554,12 +556,11 @@ $(document).ready(function() {
         </tbody>
         <tfoot>
             <tr>
-                <th>Name</th>
+                <th></th>
+                <th>First name</th>
+                <th>Last name</th>
                 <th>Position</th>
                 <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
             </tr>
         </tfoot>
     </table>

@@ -1,10 +1,9 @@
 /*
 ****************************************
-* Source: Programa1.js 
-* Description: Funciones iniciales en js
-* Encender un motor / Apagar un motor 
-* Date: 7/Fec/2020
-* Author: Josue Antonio Castro Colli
+* Source: 			Programa3.js 
+* Description:   	Pedir 10 calificaciones para después mostrarlas enlistadass. 
+* Date: 			7/Fec/2020
+* Author: 			Josue Antonio Castro Colli
 ****************************************
 */
 

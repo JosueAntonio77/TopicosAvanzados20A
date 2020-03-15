@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+****************************************
+* Source:           Programa 15.html 
+* Description:      Enviar mensajes con JavaScript al WhatsApp 
+* Date:             06/Marzo/2020
+* Author:           Josue Antonio Castro Colli
+****************************************
+-->
+<html>
+    <head>
+        <title>Programa 15</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="Programa 15.js"></script>
+    </head>
+    <body>
+        <h1>Enviar mensaje a su WhatsApp</h1>
+    	<div>
+            <!-- Esta parte es para poner el número del usuario y el mensaje que quieres enviar -->
+    		<a href="https://api.whatsapp.com/send?phone=529993815121&text=Que onda">Mensaje</a>
+
+            <!--
+            <div class="col-sm-6 col-sm-offset-3 form-group">
+                        <label> Nombre: </label>
+                        <input class="form-control" type="text" v-model="from_name">
+                        </input>
+                    </div> 
+            -->
+
+            <!-- Escribir el mensaje que se le enviara al usuario -->
+            <div> 
+                <label>Mensaje: </label>
+                <input  class= "form-control col-sm-8 col-md-6 col-lg-4"
+                        type="text" 
+                        size="40" 
+                        id="inputMensaje" 
+                        name="inputMensaje" 
+                        placeholder = "Escribe el mensaje">
+            </div>
+            <!-- Solicitar el número telefonico-->
+            <div>
+                <label>Número Telefonico +52</label>
+                <input class= "form-control col-sm-8 col-md-6 col-lg-4"
+                        type="number" min="1" pattern="^[0-9]+"
+                        size="10" 
+                        id="inputNum" 
+                        name="inputNum" 
+                        placeholder = "Número">
+            </div>
+    	</div>
+        <div>
+            <button type="Submit" onclick="enviar();">Enviar</button>
+        </div>
+    </body>
+</html>

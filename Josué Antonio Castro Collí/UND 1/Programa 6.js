@@ -1,15 +1,14 @@
 /*
 ****************************************
-* Source: Programa6.js 
-* Description: validad imput 
-* Encender un motor / Apagar un motor 
-* Date: 20/Fec/2020
-* Author: Josue Antonio Castro Colli
+* Source: 		Programa6.js 
+* Description: 	Validar inputs.
+* Date: 		20/Febrero/2020
+* Author: 		Josue Antonio Castro Colli
 ****************************************
 */
 
 function  calculaIva(){
-	//Obtener valores de los input 
+	//Obtener valores de los inputs
 	var valor = document.getElementById("inputValor").value;
 	var iva = document.getElementById("inputIva").value;//get el valor del inputIva
 
