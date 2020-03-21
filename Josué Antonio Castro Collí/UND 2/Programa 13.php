@@ -1,12 +1,16 @@
 <?php
-/*
-****************************************
-* Source: 			Programa 13.php 
-* Description:      La utilización de los POST en el HTML y PHP. 
-* Date: 			06/Marzo/2020
-* Author: 			Josue Antonio Castro Colli
-****************************************
-*/
+/*****************************************************************************
+# Program Name: Program 15.php
+# Authors: Josue Antonio Castro Collí. 
+# Description: La utilización de los POST en el HTML y PHP. 
+# Date: 06/Marzo/2020
+#
+# Funciones:
+# if (isset($_POST["numero"]) && !empty($_POST["nombre"]))      //Compara si tiene el número de pokemon 
+																// y el texto que se inserto verifica que no este vacio. 
+******************************************************************************
+*****************************************************************************/
+
 //Esta pequeña página de php lo único que hace es recibir una petición con un parámetro pasado
 //por medio de POST y devolver un pequeño resultado, en este caso dado un número
 //Devuelve el número del pokemon correspondiente de acuerdo al pokedex original

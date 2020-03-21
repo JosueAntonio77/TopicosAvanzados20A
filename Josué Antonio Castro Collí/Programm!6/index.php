@@ -12,7 +12,7 @@
 		Nombre 
 		<input type="text" id="inputText" name="inputText" placeholder="Escribe un nombre">
 		Password 
-		<input type="password" name="inputPassword" placeholder="Escribe la contrseña">
+		<input type="password" id="inputPassword" name="inputPassword" placeholder="Escribe la contrseña">
 		
 		<input type="submit" value="Verificar">
 		

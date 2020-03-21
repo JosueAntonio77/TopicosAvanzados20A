@@ -1,11 +1,14 @@
-/*
-****************************************
-* Source: 			Programa 11.js 
-* Description:      Para la creación de una hoja de PDF con una imagen incluida 
-* Date: 			05/Marzo/2020
-* Author: 			Josue Antonio Castro Colli
-****************************************
-*/
+/*****************************************************************************
+# Program Name: Program 11.js
+# Authors: Josue Antonio Castro Collí. 
+# Description: Para la creación de una hoja de PDF con una imagen incluida. 
+# Date: 05/Marzo/2020
+#
+#Funciones:
+# crear ( )               //Genera el PDF para guardar (Incluyendo el Titulo y una ya  Imagen insertada).
+******************************************************************************
+*****************************************************************************/
+
 /*
 Aquí puede encontrar los códigos para la creacion del PDF: https://parall.ax/products/jspdf  
 Códigos estras: https://rawgit.com/MrRio/jsPDF/master/docs/jsPDF.html  
