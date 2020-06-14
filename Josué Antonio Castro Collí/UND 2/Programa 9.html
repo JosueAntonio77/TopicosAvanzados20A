@@ -7,85 +7,31 @@
 # Date: 21/Febrero/2020
 #
 #Funciones:
-# format ( d )               //consctructor que inicia una tabla.
+# $(document).ready(function() {              //Obtiene la informacion de la tabla para después 
+#                                               poder mostrarla organizadamente.   
 ******************************************************************************
 *****************************************************************************
+Puedes ver ejemplos de tablas en esta página: https://datatables.net/ 
 -->
 <html>
     <head>
  <!--******************************************************************************************-->
-    	<script src ="https://code.jquery.com/jquery-3.3.1.js"> </script>
+    	<!-- Los siguientes direcciones son la librerias para Javascript
+             que nos servirán para este ejemplo de tablas. -->
+        <script src ="https://code.jquery.com/jquery-3.3.1.js"> </script>
     	<script src ="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    	<link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" >
-        <link href="Disenio.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 
-
-    	<script>
-    		function format ( d ) {
-    			return 'Full name: '+d.first_name+' '+d.last_name+'<br>'+
-      			  'Salary: '+d.salary+'<br>'+
-       			 'La fila secundaria puede contener cualquier información que desee, incluidos enlaces, imágenes, tablas internas, etc.';
-			}
-			 
-				$(document).ready(function() {
-				    var dt = $('#example').DataTable( {
-				        "processing": true,
-				        "serverSide": true,
-				        "ajax": "scripts/ids-objects.php",
-				        "columns": [
-				            {
-				                "class":          "details-control",
-				                "orderable":      false,
-				                "data":           null,
-				                "defaultContent": ""
-				            },
-				            { "data": "first_name" },
-				            { "data": "last_name" },
-				            { "data": "position" },
-				            { "data": "office" }
-				        ],
-				        "order": [[1, 'asc']]
-				    } );
-				 
-				    // Matriz para rastrear los identificadores de las filas de detalles mostrados
-				    var detailRows = [];
-				 
-				    $('#example tbody').on( 'click', 'tr td.details-control', function () {
-				        var tr = $(this).closest('tr');
-				        var row = dt.row( tr );
-				        var idx = $.inArray( tr.attr('id'), detailRows );
-				 
-				        if ( row.child.isShown() ) {
-				            tr.removeClass( 'details' );
-				            row.child.hide();
-				 
-				            // Eliminar de la matriz 'abierta'
-				            detailRows.splice( idx, 1 );
-				        }
-				        else {
-				            tr.addClass( 'details' );
-				            row.child( format( row.data() ) ).show();
-				 
-				            // Agregar a la matriz 'abierta'
-				            if ( idx === -1 ) {
-				                detailRows.push( tr.attr('id') );
-				            }
-				        }
-				    } );
-				 
-				    // En cada dibujo, recorra la matriz `detailRows` y muestre las filas secundarias
-				    dt.on( 'draw', function () {
-				        $.each( detailRows, function ( i, id ) {
-				            $('#'+id+' td.details-control').trigger( 'click' );
-				        } );
-				    } );
-				} );
-
-    	</script>
  <!--******************************************************************************************-->
         <title>Programa 9</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            //Para poder mostrar la tabla de manera ordenada. 
+            $(document).ready(function() {
+                $('#example').DataTable();
+            } );
+        </script>
     </head>
     <body>
  <!--******************************************************************************************-->   	
@@ -94,11 +40,12 @@
         <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
-                <th></th>
-                <th>First name</th>
-                <th>Last name</th>
+                <th>Name</th>
                 <th>Position</th>
                 <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
             </tr>
         </thead>
         <tbody>
@@ -561,11 +508,12 @@
         </tbody>
         <tfoot>
             <tr>
-                <th></th>
-                <th>First name</th>
-                <th>Last name</th>
+                <th>Name</th>
                 <th>Position</th>
                 <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
             </tr>
         </tfoot>
     </table>
